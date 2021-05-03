@@ -38,6 +38,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'faker'
+
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -55,3 +57,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry'
+
+gem 'httparty'
