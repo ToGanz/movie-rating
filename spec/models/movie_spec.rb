@@ -20,7 +20,7 @@ RSpec.describe Movie, type: :model do
     end
   end
 
-  context 'date gets formatted date' do
+  context '.formatted_date' do
     it 'has the right format' do
       expect(subject.formatted_date).to eq("19.12.1997")
     end
