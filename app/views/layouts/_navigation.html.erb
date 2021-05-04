@@ -32,4 +32,9 @@
       <%= submit_tag "Search Movie", class: "btn btn-outline-success my-2 my-sm-0" %>        
     <% end %>
   </div>
+  <%= link_to "Log out", 
+              destroy_user_session_path, 
+              method: :delete, 
+              class: "button is-light" 
+          %>
 </nav>
