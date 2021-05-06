@@ -32,7 +32,7 @@ RSpec.describe Movie, type: :model do
   context '.rating_by_user' do
     it 'returns the correct rating when rated' do
       subject.ratings.create(user: user, user_rating: 5)
-      expect(subject.rating_by_user(user)).to eq(5)
+      expect(subject.rating_by_user(user).user_rating).to eq(5)
     end
 
     it 'returns false when not rated' do
