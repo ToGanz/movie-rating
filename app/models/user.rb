@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
   has_many :rated_movies, through: :ratings
   
   validates :name, presence: true
