@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :rating do
-    user { nil }
-    movie { nil }
+    rating { Faker::Number.decimal(l_digits: 1) }
+    user
+    movie
   end
 end
