@@ -61,3 +61,4 @@ gem 'pry'
 gem 'httparty'
 gem 'devise'
 gem "bootstrap_form", "~> 4.0"
+gem 'will_paginate'

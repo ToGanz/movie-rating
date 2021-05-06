@@ -17,3 +17,6 @@
 <ul id="movies">
   <%= render @movies %>
 </ul>
+<div class="infinite-scroll">
+  <%= will_paginate @movies %>
+</div>
