@@ -15,7 +15,11 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @rating = Rating.new
+    if current_user && @movie.rated_by_user?(current_user)
+      @rating = @movie.rating_by_user(current_user)
+    else
+      @rating = Rating.new
+    end
   end
 
 

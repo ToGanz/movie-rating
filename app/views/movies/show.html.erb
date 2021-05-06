@@ -11,8 +11,13 @@
 
 <% if user_signed_in? %>
   <% if @movie.rated_by_user?(current_user) %>
-    <p>Your Rating: <%= @movie.rating_by_user(current_user) %></p>
+    <% provide(:button_text, 'Edit Rating') %>
+    <% provide(:path, rating_path(@rating) ) %>
+    <p>Your Rating: <%= @movie.rating_by_user(current_user).user_rating %></p>
   <% else %>
-    <%= render 'ratings/form' %>
+    <% provide(:button_text, 'Rate Movie') %>
+    <% provide(:path, ratings_path ) %>
   <% end %>
+
+  <%= render 'ratings/form' %>
 <% end %>

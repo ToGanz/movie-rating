@@ -14,7 +14,7 @@ class Movie < ApplicationRecord
 
   def rating_by_user(user)
     if rated_by_user?(user)
-      user.ratings.find_by(movie_id: id).user_rating
+      user.ratings.find_by(movie_id: id)
     else
       nil
     end
