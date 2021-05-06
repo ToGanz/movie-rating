@@ -4,8 +4,10 @@ RSpec.describe 'create movie', type: :feature do
 
   scenario 'not logged in' do
     visit root_path
-    fill_in 'Search by Title', with: 'Titanic'
-    click_on 'Search Movie'
+    within find(".movie-search") do
+      fill_in 'Search by Title', with: 'Titanic'
+      click_on 'Search Movie'
+    end
 
     expect(page).to have_content('You need to sign in or sign up before continuing')
   end
@@ -13,8 +15,10 @@ RSpec.describe 'create movie', type: :feature do
   scenario 'valid inputs' do
     sign_in(FactoryBot.create(:user))
     visit root_path
-    fill_in 'Search by Title', with: 'Titanic'
-    click_on 'Search Movie'
+    within find(".movie-search") do
+      fill_in 'Search by Title', with: 'Titanic'
+      click_on 'Search Movie'
+    end
     
     expect(page).to have_content('Titanic')
     expect(page).to have_content("19.12.1997")
@@ -29,8 +33,10 @@ RSpec.describe 'create movie', type: :feature do
   scenario 'invalid inputs' do
     sign_in(FactoryBot.create(:user))
     visit root_path
-    fill_in 'Search by Title', with: 'Ttanic'
-    click_on 'Search Movie'
+    within find(".movie-search") do
+      fill_in 'Search by Title', with: 'Ttanic'
+      click_on 'Search Movie'
+    end
     
     expect(page).to have_content("Could not find the entered movie.")
   end

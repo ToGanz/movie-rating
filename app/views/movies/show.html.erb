@@ -5,7 +5,7 @@
   <%= image_tag(@movie.poster, alt: "Poster for #{@movie.title}", class: "card-img-top" ) %>
   <div class="card-body">
     <h5 class="card-title">imdb Rating: <%= @movie.imdbRating %></h5>
-    <p class="card-text">Plot: <%= @movie.plot %></p>
+    <p class="card-text"><%= @movie.plot %></p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Release: <%= @movie.formatted_date %></li>

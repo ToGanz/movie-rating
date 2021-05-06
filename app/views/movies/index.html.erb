@@ -1,13 +1,17 @@
+<div class="jumbotron" id="jumbotron-1">
+</div>
 <div class="jumbotron">
   <h1 class="display-4">Rate your favorite movies!</h1>
   <p class="lead">Search for your favorite movie and leave a rating</p>
   <hr class="my-4">
   <p>Compare your rating with other users</p>
   <p class="lead">
-    <%= render 'movies/search' %>
+    <%= link_to 'Signup', signup_path, class: "btn btn-primary btn-lg" %>
   </p>
 </div>
-
+<div class="movie-search">
+  <%= render 'movies/search' %>
+</div>
 <ul id="movies">
   <%= render @movies %>
 </ul>
