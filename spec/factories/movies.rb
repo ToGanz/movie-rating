@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :movie do
     title { Faker::Lorem.word }
-    release_date { "19 Dec 1997" }
+    release_date { "19 Dec 1997" }
     runtime { Faker::Number.number(digits: 3) }
     genre { Faker::Lorem.word }
     directors { Faker::Lorem.word }

@@ -1,7 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe 'create movie', type: :feature do
+
+  scenario 'not logged in' do
+    visit root_path
+    fill_in 'Search by Title', with: 'Titanic'
+    click_on 'Search Movie'
+
+    expect(page).to have_content('You need to sign in or sign up before continuing')
+  end
+
   scenario 'valid inputs' do
+    sign_in(FactoryBot.create(:user))
     visit root_path
     fill_in 'Search by Title', with: 'Titanic'
     click_on 'Search Movie'
@@ -17,6 +27,7 @@ RSpec.describe 'create movie', type: :feature do
   end
 
   scenario 'invalid inputs' do
+    sign_in(FactoryBot.create(:user))
     visit root_path
     fill_in 'Search by Title', with: 'Ttanic'
     click_on 'Search Movie'
