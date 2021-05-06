@@ -2,7 +2,11 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def index
-    @movies = Movie.all
+    if user_signed_in?
+      @movies = current_user.rated_movies
+    else
+      @movies = Movie.all
+    end
   end
 
   def create

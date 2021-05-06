@@ -13,8 +13,9 @@
     <li class="list-group-item">Genre: <%= @movie.genre %></li>
     <li class="list-group-item">Directors: <%= @movie.directors %></li>
   </ul>
-  <div class="card-footer text-muted">
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+
+    <div class="card-footer">
       <% if @movie.rated_by_user?(current_user) %>
         <% provide(:button_text, 'Edit Rating') %>
         <% provide(:path, rating_path(@rating) ) %>
@@ -25,8 +26,13 @@
       <% end %>
 
       <%= render 'ratings/form' %>
-    <% else %>
+    </div>
+
+  <% else %>
+
+    <div class="card-footer text-muted">
       Log in to rate the movie.
-    <% end %>
-  </div>
+    </div>
+
+  <% end %>
 </div>

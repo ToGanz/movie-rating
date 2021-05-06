@@ -6,7 +6,9 @@
   <hr class="my-4">
   <p>Compare your rating with other users</p>
   <p class="lead">
-    <%= link_to 'Signup', signup_path, class: "btn btn-primary btn-lg" %>
+    <% if !user_signed_in? %>
+      <%= link_to 'Signup', signup_path, class: "btn btn-primary btn-lg" %>
+    <% end %>
   </p>
 </div>
 <div class="movie-search">
