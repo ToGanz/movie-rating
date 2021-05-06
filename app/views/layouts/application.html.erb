@@ -14,8 +14,7 @@
     <%= render 'layouts/navigation' %>
     <div class="container">
       <div class="row">
-        <div id="side-menu"  class="col-sm-3">
-        </div><!-- side-menu -->
+        <%= render 'layouts/side_menu' %>
 
         <div id="main-content" class="col-sm-9">
           <% flash.each do |message_type, message| %>
