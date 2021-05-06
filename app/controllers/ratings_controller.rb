@@ -12,7 +12,7 @@ class RatingsController < ApplicationController
   def update
     @rating = Rating.find(params[:id])
     if @rating.update(rating_params)
-      flash[:notice] = "Task was successfully updated."
+      flash[:notice] = "Rating was successfully updated."
       redirect_to movie_path(rating_params[:movie_id])
     else
       render 'movie/show'

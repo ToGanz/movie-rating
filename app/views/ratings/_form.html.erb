@@ -4,7 +4,7 @@
       <%= form_with(model: @rating, url: yield(:path), local: true) do |f| %>
         <%= f.number_field :user_rating, in: 1..10, step: 1, value: 1, class: 'form-control' %>
         <%= f.hidden_field :movie_id, value: @movie.id %>
-        <%= f.submit yield(:button_text), class: 'form-control rate-button' %>
+        <%= f.submit yield(:button_text), class: 'form-control btn btn-primary rate-button' %>
       <% end %>
     </div>
   </div>

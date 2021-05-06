@@ -8,9 +8,6 @@
     <ul class="navbar-nav ml-auto">
       <%= render collapsible_links_partial_path %>
     </ul>
-    <%= form_tag(movies_path, method: :post, class: "form-inline my-2 my-lg-0") do %>   
-      <%= search_field_tag :title, nil, placeholder: 'Search by Title', class: "form-control mr-sm-2" %>
-      <%= submit_tag "Search Movie", class: "btn btn-outline-success my-2 my-sm-0" %>        
-    <% end %>
+    <%= render 'movies/search' %>
   </div>
 </nav>

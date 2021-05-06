@@ -19,7 +19,7 @@
 
         <div id="main-content" class="col-sm-9">
           <% flash.each do |message_type, message| %>
-            <%= content_tag(:div, message, class: "#{message_type}") %>
+            <%= content_tag(:div, message, class: "flash #{message_type}") %>
           <% end %>
         
           <%= yield %>

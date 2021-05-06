@@ -17,6 +17,11 @@ h1 {
   font-size: 2.4rem;
 }
 
+h5 {
+  font-size: 20px;
+  font-size: 2rem;
+}
+
 i {
   width: 26px;
 }
@@ -40,4 +45,8 @@ a:hover, a:active, a:link, a:visited {
   .form-check-label {
     margin-left: 5px;
   }
+}
+
+.flash {
+  padding: 10px;
 }
