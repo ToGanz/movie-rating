@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :ratings, dependent: :destroy
-  has_many :rated_movies, through: :ratings
+  has_many :rated_movies, through: :ratings, source: :movie
   
   validates :name, presence: true
 end

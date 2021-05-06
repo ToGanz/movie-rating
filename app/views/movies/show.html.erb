@@ -8,3 +8,11 @@
   <li>Plot: <%= @movie.plot %></li>
   <li>imdb Rating: <%= @movie.imdbRating %></li>
 </ul>
+
+<% if user_signed_in? %>
+  <% if @movie.rated_by_user?(current_user) %>
+    <p>Your Rating: <%= @movie.rating_by_user(current_user) %></p>
+  <% else %>
+    <%= render 'ratings/form' %>
+  <% end %>
+<% end %>

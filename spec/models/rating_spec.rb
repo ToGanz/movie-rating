@@ -8,4 +8,12 @@ RSpec.describe Rating, type: :model do
       expect(subject).to be_valid
     end
   end
+
+  context 'user rating is missing' do
+    it 'is not valid' do
+      subject.update(user_rating: '')
+      expect(subject.errors).to have_key(:user_rating)
+    end
+  end
+  
 end

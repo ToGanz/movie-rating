@@ -1,0 +1,19 @@
+<div class="container" id="movie-rating-form">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <%
+=begin%>
+ <%= form_tag(rating_path, method: :post, class: "form-inline my-2 my-lg-0") do %>   
+      <%= search_field_tag :title, nil, placeholder: 'Search by Title', class: "form-control mr-sm-2" %>
+      <%= submit_tag "Search Movie", class: "btn btn-outline-success my-2 my-sm-0" %>        
+    <% end %> 
+<%
+=end%>
+      <%= form_with(model: @rating, local: true) do |f| %>
+        <%= f.number_field :user_rating, in: 1..10, step: 1, value: 1, class: 'form-control' %>
+        <%= f.hidden_field :movie_id, value: @movie.id %>
+        <%= f.submit 'Rate Movie', class: 'form-control rate-button' %>
+      <% end %>
+    </div>
+  </div>
+</div>
