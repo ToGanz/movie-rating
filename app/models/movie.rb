@@ -19,4 +19,13 @@ class Movie < ApplicationRecord
       nil
     end
   end
+
+  def average_rating
+    length = 0
+    sum = ratings.inject(0) do |sum, rating|
+      length += 1
+      sum + rating.user_rating
+    end
+    (sum / length.to_f).round(1)
+  end
 end

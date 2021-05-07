@@ -39,4 +39,26 @@ RSpec.describe Movie, type: :model do
       expect(subject.rating_by_user(user)).to eq(nil)
     end
   end
+
+  context '.average_rating' do
+    it 'returns the correct average' do
+      user2 = FactoryBot.create(:user) 
+      user3 = FactoryBot.create(:user) 
+      subject.ratings.create(user: user, user_rating: 5)
+      subject.ratings.create(user: user2, user_rating: 3)
+      subject.ratings.create(user: user3, user_rating: 7)
+
+      expect(subject.average_rating).to eq(5)
+    end
+
+    it 'rounds to one decimal' do
+      user2 = FactoryBot.create(:user) 
+      user3 = FactoryBot.create(:user) 
+      subject.ratings.create(user: user, user_rating: 5)
+      subject.ratings.create(user: user2, user_rating: 3)
+      subject.ratings.create(user: user3, user_rating: 2)
+
+      expect(subject.average_rating).to eq(3.3)
+    end
+  end
 end

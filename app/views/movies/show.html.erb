@@ -7,6 +7,9 @@
   <% end %>
   <div class="card-body">
     <h5 class="card-title">imdb Rating: <%= @movie.imdbRating %></h5>
+    <% if !@movie.average_rating.nan? %>
+      <h5 class="card-title">avg. User Rating: <%= @movie.average_rating %></h5>
+    <% end %>
     <p class="card-text"><%= @movie.plot %></p>
   </div>
   <ul class="list-group list-group-flush">

@@ -7,6 +7,9 @@
     <h5 class="card-title">
       <%= truncate(movie.title, :length => 60) %>
     </h5>
+    <% if !movie.average_rating.nan? %>
+      <p class="card-text">average Rating: <%= movie.average_rating %></p>
+    <% end %>
     <%= link_to 'Rate Movie', movie, class: "btn btn-primary" %>
   </div>
 </div>
