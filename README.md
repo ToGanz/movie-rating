@@ -1,24 +1,35 @@
-# README
+# Movie-rating
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Movie-rating app in Ruby on Rails.
 
-Things you may want to cover:
+* Ruby version: 3.0.1
 
-* Ruby version
+* Rails: 6.1.3.1
 
-* System dependencies
+Live Site: [https://tg-movie-rating.herokuapp.com]
+(free plan so first load might take a few seconds)
+## Getting started
 
-* Configuration
+To get started with the app, clone the repo and then install the needed gems:
 
-* Database creation
+```
+$ bundle install 
+```
 
-* Database initialization
+Next, migrate the database:
 
-* How to run the test suite
+```
+$ rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Finally, run the test suite to verify that everything is working correctly:
 
-* Deployment instructions
+```
+$ rspec
+```
 
-* ...
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
