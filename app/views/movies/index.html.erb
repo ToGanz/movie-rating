@@ -8,6 +8,8 @@
   <p class="lead">
     <% if !user_signed_in? %>
       <%= link_to 'Signup', signup_path, class: "btn btn-primary btn-lg" %>
+    <% else %>
+      <%= link_to 'Show Users', users_path, class: "btn btn-primary btn-lg" %>
     <% end %>
   </p>
 </div>

@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <li class="list-group-item active">
+    <%= @user.name %>
+  </li>
+  <% @ratings.each do |rating| %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <%= link_to rating.movie.title, rating.movie %>
+      <span class="badge badge-primary badge-pill"><%= rating.user_rating %></span>
+    </li>
+  <% end %>
+</ul>
