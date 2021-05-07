@@ -2,7 +2,9 @@
   <div class="card-header">
     <%= @movie.title %>
   </div>
-  <%= image_tag(@movie.poster, alt: "Poster for #{@movie.title}", class: "card-img-top" ) %>
+  <% if @movie.poster != "N/A" %>
+    <%= image_tag(@movie.poster, alt: "Poster for #{@movie.title}", class: "card-img-top" ) %>
+  <% end %>
   <div class="card-body">
     <h5 class="card-title">imdb Rating: <%= @movie.imdbRating %></h5>
     <p class="card-text"><%= @movie.plot %></p>

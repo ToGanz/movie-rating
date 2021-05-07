@@ -3,9 +3,9 @@ class MoviesController < ApplicationController
 
   def index
     if user_signed_in?
-      @movies = current_user.rated_movies
+      @movies = current_user.rated_movies.paginate(page: params[:page], per_page: 10)
     else
-      @movies = Movie.all
+      @movies = Movie.paginate(page: params[:page], per_page: 10)
     end
   end
 

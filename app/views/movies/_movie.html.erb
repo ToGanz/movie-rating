@@ -1,6 +1,8 @@
 
 <div class="card movie-card">
-  <%= image_tag(movie.poster, size: "200x350", alt: "Poster for #{movie.title}", class: "card-img-top" ) %>
+  <% if movie.poster != "N/A" %>
+    <%= image_tag(movie.poster, size: "200x350", alt: "Poster for #{movie.title}", class: "card-img-top" ) %>
+  <% end %>
   <div class="card-body">
     <h5 class="card-title">
       <%= truncate(movie.title, :length => 60) %>
