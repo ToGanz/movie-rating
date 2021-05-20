@@ -15,15 +15,17 @@ In this app you can search and rate your favorite movies. Ratings can be compare
 
 
 
-I build this app to practice authentication with devise and to practice making external API calls within rails.
-
 Technologies used: 
 * Ruby on Rails
 * postgresql
-* Bootstrap
+* Bootstrap 4
 * RSpec/Capybara for tests
 * Devise for authentication
 * SendGrid for Email
+* Heroku for hosting
+
+
+I built this app to practice authentication with devise and to practice making external API calls within rails.
 
 ### User Authentication functionality:
 Users register with a name, email and password. Information can be edited and deleted. If a user forgets his password he can recover it via email.
@@ -44,7 +46,7 @@ movie = Movie.find_or_create_by(
 ```
 
 
-## Getting started
+## Run the app locally
 
 To get started with the app, clone the repo and then install the needed gems:
 
@@ -57,6 +59,8 @@ Next, migrate the database:
 ```
 $ rails db:migrate
 ```
+
+You will need your own OMDB API Key.
 
 Finally, run the test suite to verify that everything is working correctly:
 
